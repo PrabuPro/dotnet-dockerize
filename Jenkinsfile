@@ -1,7 +1,3 @@
-@Library('web-email')_
-
-properties([[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '4', numToKeepStr: '4']]]);
-
 pipeline {
     /*     
     This pipeline is for packaging almost all project which respect some form
