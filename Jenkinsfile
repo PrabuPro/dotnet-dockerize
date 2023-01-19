@@ -13,9 +13,6 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                script {
-                    emailNotification.notifyStarted()
-                }
                 // Clean code folder before checkout
                 dir("${DIRECTORY_SRC}") {
                     checkout([$class: 'GitSCM', 
@@ -23,8 +20,8 @@ pipeline {
                                 doGenerateSubmoduleConfigurations: false, 
                                 extensions: [[$class: 'LocalBranch', localBranch: "**"]],
                                 submoduleCfg: [], 
-                                userRemoteConfigs: [[credentialsId: '6fa7a3b0-e641-4160-93d9-b045302d9f87', 
-                                url: "${params.GIT_URL}"]]])
+                                userRemoteConfigs: [[credentialsId: 'prabu-speos', 
+                                url: "https://gitlab.com/p5884/angular_ui.git"]]])
                 }
                 sh 'mkdir .ssh'
                 // script {
