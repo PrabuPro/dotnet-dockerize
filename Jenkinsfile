@@ -16,7 +16,7 @@ pipeline {
                 // Clean code folder before checkout
                 dir("${DIRECTORY_SRC}") {
                     checkout([$class: 'GitSCM', 
-                                branches: [[name: "*/${params.GIT_BRANCH}"]], 
+                                branches: [[name: "*/my-speos-easy2mail"]], 
                                 doGenerateSubmoduleConfigurations: false, 
                                 extensions: [[$class: 'LocalBranch', localBranch: "**"]],
                                 submoduleCfg: [], 
