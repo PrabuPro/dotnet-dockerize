@@ -20,7 +20,7 @@ pipeline {
                                 doGenerateSubmoduleConfigurations: false, 
                                 extensions: [[$class: 'LocalBranch', localBranch: "**"]],
                                 submoduleCfg: [], 
-                                userRemoteConfigs: [[credentialsId: 'prabu-speos', 
+                                userRemoteConfigs: [[credentialsId: 'prabu-speos-ssh', 
                                 url: "https://gitlab.com/p5884/angular_ui.git"]]])
                 }
                 sh 'mkdir .ssh'
