@@ -35,13 +35,13 @@ pipeline {
             steps {
                 script {
                     try {
-                        def customImage = docker.build("${env.DOCKER_REGISTRY_URL}${params.DOCKER_IMAGE}:${params.DOCKER_TAG}","--build-arg image=${env.DOCKER_REGISTRY_URL}${params.DOCKER_BUILD_IMAGE_NAME} --build-arg version=${params.DOCKER_BUILD_IMAGE_TAG} ." )
+                        def customImage = docker.build("node:16.10.0-buster","--build-arg image=node --build-arg version=16.1.0-buster ." )
                         /** 
                             Problem related to the certificates authentication
                             Meanwhile sh is working fine
                         **/
-                        sh "'docker' push ${env.DOCKER_REGISTRY_URL}${params.DOCKER_IMAGE}:${params.DOCKER_TAG}"
-                        sh "'docker' rmi ${env.DOCKER_REGISTRY_URL}${params.DOCKER_IMAGE}:${params.DOCKER_TAG}"
+                        // sh "'docker' push ${env.DOCKER_REGISTRY_URL}${params.DOCKER_IMAGE}:${params.DOCKER_TAG}"
+                        // sh "'docker' rmi ${env.DOCKER_REGISTRY_URL}${params.DOCKER_IMAGE}:${params.DOCKER_TAG}"
                     }
                     catch (Exception e) {
                         script {
