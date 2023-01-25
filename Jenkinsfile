@@ -6,7 +6,7 @@ pipeline {
     We need to be the most generic terms
 
     */     
-    agent { label 'docker' }
+    agent any
 
 
     stages {
