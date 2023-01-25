@@ -1,5 +1,3 @@
-@Library('web-email')_
-
 // properties([[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '2', numToKeepStr: '2']]]);
 
 pipeline {
