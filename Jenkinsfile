@@ -6,7 +6,9 @@ pipeline {
     We need to be the most generic terms
 
     */     
-    agent { dockerfile true }
+    agent {
+        docker { image 'node:16.10.0-bullseye' }
+    }
 
 
     stages {
