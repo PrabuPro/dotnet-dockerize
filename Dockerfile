@@ -20,5 +20,5 @@ RUN npm run build
 
 # Copy static resources
 # image-front-end is a simple nginx image which is used to host front-end 
-FROM docker-registry.dev.speos.lan/product/web/docker/image-front-end:latest
+FROM nginx:latest
 COPY --from=build /build/dist /usr/share/nginx/html 

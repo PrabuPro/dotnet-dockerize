@@ -35,7 +35,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        def customImage = docker.build("node:16.10.0-buster","--build-arg image=node --build-arg version=16.1.0-buster ." )
+                        def customImage = docker.build("node:16.10.0-bullseye","--build-arg image=node --build-arg version=16.1.0-bullseye ." )
                         /** 
                             Problem related to the certificates authentication
                             Meanwhile sh is working fine
